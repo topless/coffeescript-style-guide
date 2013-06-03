@@ -91,7 +91,7 @@ These statements should be grouped in the following order:
 
 Avoid extraneous whitespace in the following situations:
 
-- Immediately inside parentheses, brackets or braces
+- Immediately inside parentheses
 
     ```coffeescript
        ($ 'body') # Yes
@@ -103,6 +103,13 @@ Avoid extraneous whitespace in the following situations:
     ```coffeescript
        console.log x, y # Yes
        console.log x , y # No
+    ```
+    
+But use a single space immediately inside curly brackets
+
+    ```coffeescript
+       { foo: bar } # Yes
+       {foo: bar} # No
     ```
 
 Additional recommendations:
