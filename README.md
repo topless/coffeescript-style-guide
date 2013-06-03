@@ -1,10 +1,7 @@
-# CoffeeScript Style Guide
+# Fog Creek CoffeeScript Style Guide
 
-This guide presents a collection of best-practices and coding conventions for the [CoffeeScript][coffeescript] programming language.
-
-This guide is intended to be community-driven, and contributions are highly encouraged.
-
-Please note that this is a work-in-progress: there is much more that can be specified, and some of the guidelines that have been specified may not be deemed to be idiomatic by the community (in which case, these offending guidelines will be modified or removed, as appropriate).
+This is the Fog Creek fork of https://github.com/polarmobile/coffeescript-style-guide. It's very close to the original,
+except that we use the c-like boolean operators, don't prefer 'unless' as much, and think 'return @' is just fine.
 
 ## Inspiration
 
@@ -299,7 +296,9 @@ Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unl
 <a name="conditionals"/>
 ## Conditionals
 
-Favor `unless` over `if` for negative conditions.
+*HERE FOG CREEK SYLE DIFFERS FROM OTHER CONVENTIONS*
+
+Favor `unless` over `if` for negative conditions only when it makes the code substantially more readable.
 
 Instead of using `unless...else`, use `if...else`:
 
@@ -359,6 +358,11 @@ object = one: 1, two: 2
 alert("#{key} = #{value}") for key, value of object
 ```
 
+*FOG CREEK RULE*
+
+When it makes the code more readable, use underscore.js functions instead of comprehensions.
+
+
 <a name="#extending_native_objects"/>
 ## Extending Native Objects
 
@@ -407,20 +411,8 @@ If a custom annotation is required, the annotation should be documented in the p
 <a name="miscellaneous"/>
 ## Miscellaneous
 
-`and` is preferred over `&&`.
-
-`or` is preferred over `||`.
-
-`is` is preferred over `==`.
-
-`not` is preferred over `!`.
-
-`or=` should be used when possible:
-
-```coffeescript
-temp or= {} # Yes
-temp = temp || {} # No
-```
+*FOG CREEK RULE: 'and' 'or' and is' just look weird. Use the C-like operators. None of this 'and', 
+'or', 'is' and 'not' nonsense. Use &&, ||, ==, and !.*
 
 Prefer shorthand notation (`::`) for accessing an object's prototype:
 
@@ -436,12 +428,7 @@ return @property # Yes
 return this.property # No
 ```
 
-However, avoid the use of **standalone** `@`:
-
-```coffeescript
-return this # Yes
-return @ # No
-```
+*FOG CREEK RULE: Standard convention says don't do 'return @'. We think it's fine.*
 
 Avoid `return` where not required, unless the explicit return increases clarity.
 
