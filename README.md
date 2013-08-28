@@ -437,7 +437,7 @@ return this.property # No
 
 *FOG CREEK RULE: Standard convention says don't do 'return @'. We think it's fine.*
 
-Avoid `return` where not required, unless the explicit return increases clarity.
+Avoid `return` where not required, unless the explicit return increases clarity. However, be aware that coffeescript will automatically return the result of the last line of code which can cause memory leaks. To avoid this behavior, put a `return` at the end of the fuction.
 
 Use splats (`...`) when working with functions that accept variable numbers of arguments:
 
